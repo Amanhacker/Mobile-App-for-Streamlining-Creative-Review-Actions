@@ -1,0 +1,102 @@
+<ion-header>
+    <ion-toolbar color="light">
+      <ion-buttons slot="start">
+        <ion-back-button color="dark" defaultHref="/tabs/tab1"></ion-back-button>
+      </ion-buttons>
+  
+      <ion-title>{{data?.title}} ({{data?.adType}})</ion-title>
+  
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <div class="comments-list">
+      <div class="comment-item">
+        <ion-row class="ion-justify-content-center">
+          <ion-col>
+            <img src="{{data?.thumbnailUrl}}" alt="No Preview Available">
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-left: 10px;">
+            <ion-col style="max-width: 120px;">Landing Page</ion-col>
+            <ion-col class="ion-text-left"><a href="{{data?.appLink}}" style="word-break: break-all;"> {{data?.appLink}}</a></ion-col>
+         </ion-row>
+        <ion-row style="margin-left: 10px;">
+            <ion-col style="max-width: 120px;">CRID</ion-col>
+            <ion-col>{{data?.crid}}</ion-col>
+         </ion-row>
+         <ion-row style="margin-left: 10px;">
+            <ion-col style="max-width: 120px;">Description</ion-col>
+            <ion-col>{{data?.imageText ? data?.imageText : '-'}}</ion-col>
+         </ion-row>
+        <ion-row style="margin-left: 10px;">
+            <ion-col style="max-width: 120px;">Country</ion-col>
+            <ion-col>{{data?.country}}</ion-col>
+         </ion-row>
+         <ion-row style="margin-left: 10px;">
+            <ion-col style="max-width: 120px;">DSP</ion-col>
+            <ion-col>{{data?.dsp}}</ion-col>
+         </ion-row>
+         <ion-row style="margin-left: 10px;">
+            <ion-col style="max-width: 120px;">App</ion-col>
+            <ion-col>{{data?.inventory}}</ion-col>
+         </ion-row>
+         <ion-row style="margin-left: 10px;">
+            <ion-col style="max-width: 120px;">Revenue</ion-col>
+            <ion-col>{{data?.lossRevenue}}</ion-col>
+         </ion-row>
+         <ion-row style="margin-left: 10px;">
+            <ion-col style="max-width: 120px;">Submitted Date</ion-col>
+            <ion-col>{{data?.submittedDate}}</ion-col>
+         </ion-row>
+         <ion-row style="margin-left: 10px;">
+            <ion-col style="max-width: 120px;">Format</ion-col>
+            <ion-col>JPEG</ion-col>
+         </ion-row>
+         <ion-row style="margin-left: 10px;">
+            <ion-col style="max-width: 120px;">Aspect Ratio</ion-col>
+            <ion-col>16:9</ion-col>
+         </ion-row>
+         <ion-row style="margin-left: 10px;">
+            <ion-col style="max-width: 120px;">Resolution</ion-col>
+            <ion-col>1280 x 720</ion-col>
+         </ion-row>
+      </div>
+    </div>
+  </ion-content>
+  
+  <ion-footer>
+    <ion-toolbar>
+        <div class="action-section">
+            <ion-button size="medium" color="success" fill="outline" shape="round" (click)="approve()" *ngIf="currentTab === 'tab1' || currentTab === 'tab3'"> 
+                Approve
+              </ion-button>
+              <ion-button size="medium" color="danger" fill="outline" shape="round" (click)="reject()" *ngIf="currentTab === 'tab1' || currentTab === 'tab2'">
+                Reject
+              </ion-button>
+        </div>
+    </ion-toolbar>
+  </ion-footer>
+
+  <ion-modal [isOpen]="isAlertOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+            <div class="header-section">
+              <div class="iteminvisible">Other</div>
+              <div class="itemcenter">Creative Review</div>
+              <ion-icon class="itemright ion-padding-end" style="height: 30px; width: 25px;" slot="icon-only" name="power"></ion-icon>
+            </div>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <div style="flex-direction: column; display: flex; align-items: center; justify-content: center; height: 100%;">
+        <ion-icon aria-hidden="true" style="width: 60px; height: 60px; color: red;" *ngIf="isreject" name="close-circle"></ion-icon>
+        <ion-icon aria-hidden="true" style="width: 60px; height: 60px; color: green;" *ngIf="!isreject" name="checkmark-circle"></ion-icon>
+        <div style="color: red; font-size: 30px; font-family: monospace;" *ngIf="isreject">Rejected!</div>
+        <div style="color: green; font-size: 30px; font-family: monospace;" *ngIf="!isreject">Approved!</div>
+      </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  

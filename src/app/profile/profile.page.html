@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <div class="itemleft">
+        <ion-icon (click)="back()" name="arrow-back" size="large"
+          >Back</ion-icon
+        >
+      </div>
+    </ion-buttons>
+    <ion-title>User Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-title>{{ userData.firstName }} {{ userData.lastName }}</ion-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-icon name="person"></ion-icon>
+          <ion-label>Username:</ion-label>
+          <ion-text>{{ username }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="key"></ion-icon>
+          <ion-label>Role:</ion-label>
+          <ion-text>{{ userData.role }}</ion-text>
+        </ion-item>
+        <ion-item *ngIf="userData.role !== 'Creative Reviewer Lead'">
+          <ion-icon name="people"></ion-icon>
+          <ion-label>Team:</ion-label>
+          <ion-text>{{ userData.team }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="checkmark-circle"></ion-icon>
+          <ion-label>Approved Count:</ion-label>
+          <ion-text>{{ userData.approvedCount }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="close-circle"></ion-icon>
+          <ion-label>Rejected Count:</ion-label>
+          <ion-text>{{ userData.rejectedCount }}</ion-text>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Add additional ion-content for admin user -->
+  <ion-content *ngIf="userData.role === 'Creative Reviewer Lead'">
+    <ion-item>
+      <ion-label>Select user:</ion-label>
+      <ion-select [(ngModel)]="selectedUsername" (ionChange)="onChange($event)">
+        <ion-select-option *ngFor="let user of users" [value]="user"
+          >{{ user }}</ion-select-option
+        >
+      </ion-select>
+    </ion-item>
+
+    <ion-card *ngIf="selectedUsername && selectedUserData">
+      <ion-card-header>
+        <ion-title
+          >{{ selectedUserData.firstName }} {{ selectedUserData.lastName
+          }}</ion-title
+        >
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-icon name="person"></ion-icon>
+            <ion-label>Username:</ion-label>
+            <ion-text>{{ selectedUsername }}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="key"></ion-icon>
+            <ion-label>Role:</ion-label>
+            <ion-text>{{ selectedUserData.role }}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="people"></ion-icon>
+            <ion-label>Team:</ion-label>
+            <ion-text>{{ selectedUserData.team }}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="checkmark-circle"></ion-icon>
+            <ion-label>Approved Count:</ion-label>
+            <ion-text>{{ selectedUserData.approvedCount }}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="close-circle"></ion-icon>
+            <ion-label>Rejected Count:</ion-label>
+            <ion-text>{{ selectedUserData.rejectedCount }}</ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-content>

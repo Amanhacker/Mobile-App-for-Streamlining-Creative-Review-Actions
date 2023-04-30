@@ -1,0 +1,8 @@
+{
+  "name": "Scrollable Module",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "56d21779"
+}

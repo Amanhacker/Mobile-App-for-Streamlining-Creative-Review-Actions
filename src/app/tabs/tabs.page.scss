@@ -1,0 +1,36 @@
+.ion-title {
+    font-weight: bold;
+}
+
+.toolbar-container .toolbar-content {
+    display: flex !important;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.iteminvisible {
+    flex: 0 1 auto;
+    visibility: hidden;
+  }
+
+.itemcenter {
+    flex: 0 1 auto;
+    font-family: system-ui;
+    font-size: 24px;
+  }
+  
+  .itemright {
+    flex: 0 1 auto;
+  }
+
+
+::ng-deep ion-tab-button.tab-selected {
+  background-color: black;
+  color: white
+}
+
+

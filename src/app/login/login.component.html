@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <div class="title">GOOGLE ADs</div>
+      <div class="made-by">
+        Developed by
+        <span class="last-name">Aman Barnwal</span>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="login-content">
+    <div class="login-form">
+      <ion-item style="min-height: 66px">
+        <ion-label position="floating">User ID</ion-label>
+        <ion-input type="text" [(ngModel)]="username"></ion-input>
+      </ion-item>
+      <ion-item style="min-height: 66px">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+      <ion-button expand="block" class="login" (click)="login()"
+        >Login</ion-button
+      >
+    </div>
+  </div>
+  <div class="footer" height="12" alt="SAMSUNG SSP">GOOGLE SSP © 2023</div>
+</ion-content>

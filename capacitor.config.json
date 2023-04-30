@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Scrollable Module",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

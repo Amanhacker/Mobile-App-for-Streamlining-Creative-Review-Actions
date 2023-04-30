@@ -1,0 +1,78 @@
+.profile-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px;
+  }
+  .profile-left {
+    margin-right: 16px;
+  }
+  .profile-right {
+    display: flex;
+    flex-direction: column;
+  }
+  .profile-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  .profile-counts {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .count {
+    margin-left: 8px;
+  }
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .profile-cred {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  .profile-team {
+    font-size: 16px;
+  }
+
+
+
+  ion-card {
+    margin: 20px;
+  }
+  ion-card-header {
+    background-color: #004777;
+    color: #ffffff;
+  }
+  ion-card-content {
+    padding: 20px;
+  }
+  ion-list {
+    margin: 0;
+    padding: 0;
+  }
+  ion-item {
+    --padding-start: 0;
+  }
+  ion-icon {
+    color: #004777;
+    margin-right: 10px;
+  }
+  ion-label {
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  ion-icon[name="person1"] {
+    font-size: 3rem;
+    margin-right: 1rem;
+  }
+  ion-label {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  
+  
+  

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+      <div class="header-section">
+        <div class="itemleft" style="margin-left: 10px">
+          <ion-icon (click)="profile()" name="person-circle" size="large" style="width: 35px; height: 35px"></ion-icon>
+        </div>
+        <div class="itemcenter">Creative Review</div>
+        <div class="itemright">
+          <ion-icon class="ion-padding-end" (click)="logout()" size="large" slot="icon-only" name="power"></ion-icon>
+        </div>
+      </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="tab1" (click)="tabClicked('tab1')">
+            <ion-icon aria-hidden="true" name="cloud-circle"></ion-icon>
+            <ion-label style="font-size: 13px">Pending ({{pCount}})</ion-label>
+          </ion-tab-button>
+
+      <ion-tab-button tab="tab2" (click)="tabClicked('tab2')">
+        <ion-icon aria-hidden="true" name="checkmark-circle"></ion-icon>
+        <ion-label style="font-size: 13px">Approved ({{aCount}})</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="tab3" (click)="tabClicked('tab3')">
+        <ion-icon aria-hidden="true" name="close-circle"></ion-icon>
+        <ion-label style="font-size: 13px">Rejected ({{rCount}})</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+  <!-- <ion-button class="logout" (click)="logout()">Logout</ion-button> Add a logout button -->
+</ion-content>

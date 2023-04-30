@@ -1,0 +1,147 @@
+<ion-content>
+  <div class="post-list" style="font-family: system-ui">
+    <div class="post-item" *ngFor="let creative of creativeList.pending">
+      <div class="post-header">
+        <ion-row class="ion-justify-content-center ion-align-items-center">
+          <ion-col size="auto">
+            <ion-avatar class="avatar-sm thumbnail-img">
+              <img src="{{creative?.thumbnailUrl}}" alt="" />
+            </ion-avatar>
+          </ion-col>
+          <ion-col>
+            <strong>{{creative.title}}</strong>
+          </ion-col>
+          <ion-col size="auto">
+            <ion-button
+              size="small"
+              fill="clear"
+              color="dark"
+              (click)="openDetailsWithState(creative)"
+            >
+              <ion-icon slot="icon-only" name="expand-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="post-media" style="min-height: 215px">
+        <img
+          src="{{creative?.thumbnailUrl}}"
+          alt="No Preview Available"
+          *ngIf="creative?.adType === 'native image'"
+        />
+        <video
+          controls
+          class="content-video"
+          muted
+          id="video"
+          *ngIf="creative?.adType === 'native video'"
+        >
+          <source src="{{creative?.videoUrl}}" type="video/mp4" />
+        </video>
+      </div>
+      <div class="post-actions">
+        <ion-row class="ion-align-items-center" style="margin-left: 8px">
+          <ion-col> {{creative?.adType | titlecase}} </ion-col>
+          <ion-col size="auto">
+            <ion-button
+              size="medium"
+              fill="clear"
+              color="success"
+              id="present-alert"
+              (click)="approve(creative)"
+            >
+              <ion-icon slot="icon-only" name="checkmark-circle"></ion-icon>
+            </ion-button>
+            <ion-button
+              size="medium"
+              fill="clear"
+              color="danger"
+              id="present-alert"
+              (click)="reject(creative)"
+            >
+              <ion-icon slot="icon-only" name="close-circle"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div class="post-comments">
+        <div
+          class="comment-item"
+          style="width: 100%; display: flex; flex-direction: column"
+        >
+          <span style="display: flex; justify-content: space-between"
+            ><span><strong>Country &nbsp;</strong> {{creative?.country}}</span>
+            <span style="min-width: 160px"
+              ><strong>APP &nbsp;</strong> {{creative?.inventory}}</span
+            ></span
+          >
+          <span style="display: flex; justify-content: space-between">
+            <span
+              ><strong>Revenue &nbsp;</strong> {{creative?.lossRevenue |
+              number}}</span
+            >
+            <span style="min-width: 160px"
+              ><strong>DSP &nbsp;</strong> {{creative?.dsp}}</span
+            ></span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-modal [isOpen]="isAlertOpen">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <div class="header-section">
+          <div class="iteminvisible">Other</div>
+          <div class="itemcenter">Creative Review</div>
+          <ion-icon
+            class="itemright ion-padding-end"
+            style="height: 30px; width: 25px"
+            slot="icon-only"
+            name="power"
+          ></ion-icon>
+        </div>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <div
+        style="
+          flex-direction: column;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+        "
+      >
+        <ion-icon
+          aria-hidden="true"
+          style="width: 60px; height: 60px; color: red"
+          *ngIf="isreject"
+          name="close-circle"
+        ></ion-icon>
+        <ion-icon
+          aria-hidden="true"
+          style="width: 60px; height: 60px; color: green"
+          *ngIf="!isreject"
+          name="checkmark-circle"
+        ></ion-icon>
+        <div
+          style="color: red; font-size: 30px; font-family: monospace"
+          *ngIf="isreject"
+        >
+          Rejected!
+        </div>
+        <div
+          style="color: green; font-size: 30px; font-family: monospace"
+          *ngIf="!isreject"
+        >
+          Approved!
+        </div>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>
