@@ -15,7 +15,7 @@
   (Preferably use Samsung Galaxy S20 Series)
   
   I have hosted this project on this link :
-    Hosted at : https://Amanhacker.github.io/Mobile-App-for-Streamlining-Creative-Review-Actions
+    Hosted at : https://Amanhacker.github.io/Mobile-App-for-Streamlining-Creative-Review-Actions (Please view in Mobile mode)
     
     (Just make this repo public, then you're able to see this website live)
 
