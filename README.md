@@ -15,7 +15,7 @@
   (Preferably use Samsung Galaxy S20 Series)
   
   I have hosted this project on this link :
-    https://amanhacker.github.io/Mobile-App-for-Streamlining-Creative-Review-Actions/
+    Hosted at : https://Amanhacker.github.io/Mobile-App-for-Streamlining-Creative-Review-Actions
     
     (Just make this repo public, then you're able to see this website live)
 
@@ -73,3 +73,23 @@
     Easy access for the manual reviewer team.
     Ease of access for business users.
     Since, it provides a UX which eases the users work.
+    
+   ## Steps for hosting on Github Pages :
+	
+	ng build --base-href "https://Amanhacker.github.io/Mobile-App-for-Streamlining-Creative-Review-Actions"
+	cd dist
+	git init
+	
+	git remote add origin https://github.com/Amanhacker/Mobile-App-for-Streamlining-Creative-Review-Actions.git
+
+	git add .
+	git commit -m "Code push for github page"
+	
+	git push -u origin master:gh-pages
+
+	Set up GitHub Pages: 
+	
+		Once the code is pushed, you just need to go to your GitHub repository settings, go to the "Pages" tab and set the source to the gh-pages branch.
+		
+	That's it! Your Ionic project should now be deployed to GitHub Pages.
+
