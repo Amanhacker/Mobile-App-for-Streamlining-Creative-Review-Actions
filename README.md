@@ -1,6 +1,14 @@
 # Mobile-App-for-Streamlining-Creative-Review-Actions
 
-  The project is build using Ionic Framework in Angular
+  The project is build using Ionic Framework in Angular.
+  
+   I have hosted this project on this link :
+  
+ Hosted at : https://Amanhacker.github.io/Mobile-App-for-Streamlining-Creative-Review-Actions 
+      (Please view in Mobile mode)
+    
+  ## Please open this website in either Mobile or responsive Mobile devices (if you're using any browser in Laptop screen).
+  (Preferably use Samsung Galaxy S20 Series)
 
   Steps to run the Project :
 
@@ -11,14 +19,7 @@
   The project will open at http://localhost:8100/login
 
   This project is for Mobile devices.
-
-  (Preferably use Samsung Galaxy S20 Series)
-  
-  I have hosted this project on this link :
-  
-Hosted at : https://Amanhacker.github.io/Mobile-App-for-Streamlining-Creative-Review-Actions 
-      (Please view in Mobile mode)
-    
+ 
     (Just make this repo public, then you're able to see this website live)
 
   Below are the Usernames & their Credentials :
