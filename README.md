@@ -85,10 +85,11 @@
 	
 	git remote add origin https://github.com/Amanhacker/Mobile-App-for-Streamlining-Creative-Review-Actions.git
 
- Here, before committing the files inside dist folder, check this line <base href=https://Amanhacker.github.io/Mobile-App-for-Streamlining-Creative-Review-Actions"> in index.html.
- You should append '/' forward slash at the end of href path.
+  Here, before committing the files inside dist folder, check this line <base href=https://Amanhacker.github.io/Mobile-App-for-Streamlining-Creative-Review-Actions"> in index.html.
+  You should append '/' forward slash at the end of href path.
 
- It should become <base href=https://Amanhacker.github.io/Mobile-App-for-Streamlining-Creative-Review-Actions/"> in index.html in dist folder. Now, you can commit and push the code in gh-pages branch for deployment.
+  It should become <base href=https://Amanhacker.github.io/Mobile-App-for-Streamlining-Creative-Review-Actions/"> in index.html in dist folder. Now, you can commit and push the code in 
+  gh-pages branch for deployment.
 
 	git add .
 	git commit -m "Code push for github page"
