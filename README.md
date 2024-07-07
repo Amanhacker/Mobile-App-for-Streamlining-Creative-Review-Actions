@@ -1,6 +1,6 @@
 # Mobile-App-for-Streamlining-Creative-Review-Actions
 
-  The project is build using Ionic Framework in Angular.
+  The project is built using Ionic Framework in Angular.
   
    I have hosted this project on this link :
   
